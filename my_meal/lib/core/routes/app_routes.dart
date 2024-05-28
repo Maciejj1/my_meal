@@ -3,6 +3,7 @@ import 'package:flutter/widgets.dart';
 import 'package:go_router/go_router.dart';
 import 'package:my_meal/features/dashboard/presentation/dashboard_screen.dart';
 import 'package:my_meal/features/product_details/presentation/product_details_screen.dart';
+import 'package:my_meal/features/product_details/presentation/product_details_screen_content.dart';
 import 'package:my_meal/features/splash_screen/splash_screen.dart';
 // Enumeracja definiująca różne ścieżki aplikacji.
 
@@ -32,7 +33,7 @@ class AppRoute {
         GoRoute(
           path: Routes.splashScreen.path,
           name: Routes.splashScreen.name,
-          pageBuilder: (BuildContext context, GoRouterState state) => NoTransitionPage(
+          pageBuilder: (BuildContext context, GoRouterState state) => const NoTransitionPage(
             child: SplashScreen(),
           ),
         ),

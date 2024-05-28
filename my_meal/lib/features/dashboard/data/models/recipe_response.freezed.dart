@@ -22,8 +22,8 @@ RecipeResponse _$RecipeResponseFromJson(Map<String, dynamic> json) {
 mixin _$RecipeResponse {
   int? get id => throw _privateConstructorUsedError;
   String? get name => throw _privateConstructorUsedError;
-  String? get ingredients => throw _privateConstructorUsedError;
-  String? get instructions => throw _privateConstructorUsedError;
+  List<String>? get ingredients => throw _privateConstructorUsedError;
+  List<String>? get instructions => throw _privateConstructorUsedError;
   int? get prepTimeMinutes => throw _privateConstructorUsedError;
   int? get cookTimeMinutes => throw _privateConstructorUsedError;
   int? get servings => throw _privateConstructorUsedError;
@@ -52,8 +52,8 @@ abstract class $RecipeResponseCopyWith<$Res> {
   $Res call(
       {int? id,
       String? name,
-      String? ingredients,
-      String? instructions,
+      List<String>? ingredients,
+      List<String>? instructions,
       int? prepTimeMinutes,
       int? cookTimeMinutes,
       int? servings,
@@ -110,11 +110,11 @@ class _$RecipeResponseCopyWithImpl<$Res, $Val extends RecipeResponse>
       ingredients: freezed == ingredients
           ? _value.ingredients
           : ingredients // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as List<String>?,
       instructions: freezed == instructions
           ? _value.instructions
           : instructions // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as List<String>?,
       prepTimeMinutes: freezed == prepTimeMinutes
           ? _value.prepTimeMinutes
           : prepTimeMinutes // ignore: cast_nullable_to_non_nullable
@@ -178,8 +178,8 @@ abstract class _$$RecipeResponseImplCopyWith<$Res>
   $Res call(
       {int? id,
       String? name,
-      String? ingredients,
-      String? instructions,
+      List<String>? ingredients,
+      List<String>? instructions,
       int? prepTimeMinutes,
       int? cookTimeMinutes,
       int? servings,
@@ -232,13 +232,13 @@ class __$$RecipeResponseImplCopyWithImpl<$Res>
           : name // ignore: cast_nullable_to_non_nullable
               as String?,
       ingredients: freezed == ingredients
-          ? _value.ingredients
+          ? _value._ingredients
           : ingredients // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as List<String>?,
       instructions: freezed == instructions
-          ? _value.instructions
+          ? _value._instructions
           : instructions // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as List<String>?,
       prepTimeMinutes: freezed == prepTimeMinutes
           ? _value.prepTimeMinutes
           : prepTimeMinutes // ignore: cast_nullable_to_non_nullable
@@ -297,8 +297,8 @@ class _$RecipeResponseImpl extends _RecipeResponse {
   const _$RecipeResponseImpl(
       {this.id,
       this.name,
-      this.ingredients,
-      this.instructions,
+      final List<String>? ingredients,
+      final List<String>? instructions,
       this.prepTimeMinutes,
       this.cookTimeMinutes,
       this.servings,
@@ -311,7 +311,9 @@ class _$RecipeResponseImpl extends _RecipeResponse {
       this.rating,
       this.reviewCount,
       final List<String>? mealType})
-      : _tags = tags,
+      : _ingredients = ingredients,
+        _instructions = instructions,
+        _tags = tags,
         _mealType = mealType,
         super._();
 
@@ -322,10 +324,26 @@ class _$RecipeResponseImpl extends _RecipeResponse {
   final int? id;
   @override
   final String? name;
+  final List<String>? _ingredients;
   @override
-  final String? ingredients;
+  List<String>? get ingredients {
+    final value = _ingredients;
+    if (value == null) return null;
+    if (_ingredients is EqualUnmodifiableListView) return _ingredients;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  final List<String>? _instructions;
   @override
-  final String? instructions;
+  List<String>? get instructions {
+    final value = _instructions;
+    if (value == null) return null;
+    if (_instructions is EqualUnmodifiableListView) return _instructions;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
   @override
   final int? prepTimeMinutes;
   @override
@@ -378,10 +396,10 @@ class _$RecipeResponseImpl extends _RecipeResponse {
             other is _$RecipeResponseImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
-            (identical(other.ingredients, ingredients) ||
-                other.ingredients == ingredients) &&
-            (identical(other.instructions, instructions) ||
-                other.instructions == instructions) &&
+            const DeepCollectionEquality()
+                .equals(other._ingredients, _ingredients) &&
+            const DeepCollectionEquality()
+                .equals(other._instructions, _instructions) &&
             (identical(other.prepTimeMinutes, prepTimeMinutes) ||
                 other.prepTimeMinutes == prepTimeMinutes) &&
             (identical(other.cookTimeMinutes, cookTimeMinutes) ||
@@ -408,8 +426,8 @@ class _$RecipeResponseImpl extends _RecipeResponse {
       runtimeType,
       id,
       name,
-      ingredients,
-      instructions,
+      const DeepCollectionEquality().hash(_ingredients),
+      const DeepCollectionEquality().hash(_instructions),
       prepTimeMinutes,
       cookTimeMinutes,
       servings,
@@ -442,8 +460,8 @@ abstract class _RecipeResponse extends RecipeResponse {
   const factory _RecipeResponse(
       {final int? id,
       final String? name,
-      final String? ingredients,
-      final String? instructions,
+      final List<String>? ingredients,
+      final List<String>? instructions,
       final int? prepTimeMinutes,
       final int? cookTimeMinutes,
       final int? servings,
@@ -466,9 +484,9 @@ abstract class _RecipeResponse extends RecipeResponse {
   @override
   String? get name;
   @override
-  String? get ingredients;
+  List<String>? get ingredients;
   @override
-  String? get instructions;
+  List<String>? get instructions;
   @override
   int? get prepTimeMinutes;
   @override

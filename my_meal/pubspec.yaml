@@ -55,6 +55,7 @@ dependencies:
   icons_plus: ^5.0.0
   flutter_svg: ^2.0.10+1
   sidebarx: ^0.17.1
+  equatable: ^2.0.5
 
 dev_dependencies:
   flutter_test:

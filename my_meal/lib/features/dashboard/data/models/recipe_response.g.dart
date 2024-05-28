@@ -10,8 +10,12 @@ _$RecipeResponseImpl _$$RecipeResponseImplFromJson(Map<String, dynamic> json) =>
     _$RecipeResponseImpl(
       id: (json['id'] as num?)?.toInt(),
       name: json['name'] as String?,
-      ingredients: json['ingredients'] as String?,
-      instructions: json['instructions'] as String?,
+      ingredients: (json['ingredients'] as List<dynamic>?)
+          ?.map((e) => e as String)
+          .toList(),
+      instructions: (json['instructions'] as List<dynamic>?)
+          ?.map((e) => e as String)
+          .toList(),
       prepTimeMinutes: (json['prepTimeMinutes'] as num?)?.toInt(),
       cookTimeMinutes: (json['cookTimeMinutes'] as num?)?.toInt(),
       servings: (json['servings'] as num?)?.toInt(),

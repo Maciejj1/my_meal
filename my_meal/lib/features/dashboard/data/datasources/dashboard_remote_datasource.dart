@@ -6,7 +6,7 @@ import 'package:my_meal/features/dashboard/data/models/recipes_response.dart';
 
 @lazySingleton
 class DashboardRemoteDatasource {
-  Future<List<RecipesResponse>> getAllRecipes() async {
+  Future<RecipesResponse> getAllRecipes() async {
     try {
       final response = await Dio().get(ListAPI.baseUrl + ListAPI.getAllRecipes,
           options: Options(headers: {
@@ -16,9 +16,9 @@ class DashboardRemoteDatasource {
 
       if (response.statusCode == 200) {
         if (response.data is List) {
-          return (response.data as List).map((e) => RecipesResponse.fromJson(e)).toList();
+          return RecipesResponse.fromJson(response.data[0]);
         } else {
-          return [RecipesResponse.fromJson(response.data)];
+          return RecipesResponse.fromJson(response.data);
         }
       } else {
         throw Exception();
@@ -28,7 +28,7 @@ class DashboardRemoteDatasource {
     }
   }
 
-  Future<List<RecipeResponse>> getRecipeById(int id) async {
+  Future<RecipeResponse> getRecipeById(int id) async {
     try {
       final response = await Dio().get(ListAPI.baseUrl + ListAPI.getSingleRecipe + id.toString(),
           options: Options(headers: {
@@ -38,9 +38,9 @@ class DashboardRemoteDatasource {
 
       if (response.statusCode == 200) {
         if (response.data is List) {
-          return (response.data as List).map((e) => RecipeResponse.fromJson(e)).toList();
+          return RecipeResponse.fromJson(response.data[0]);
         } else {
-          return [RecipeResponse.fromJson(response.data)];
+          return RecipeResponse.fromJson(response.data);
         }
       } else {
         throw Exception();

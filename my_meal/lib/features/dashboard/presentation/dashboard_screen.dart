@@ -1,47 +1,30 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gap/gap.dart';
-import 'package:my_meal/features/dashboard/presentation/widgets/dashboard_sidebar.dart';
-import 'package:sidebarx/sidebarx.dart';
+import 'package:my_meal/features/dashboard/presentation/widgets/dashboard_banner.dart';
+import 'package:my_meal/features/dashboard/presentation/widgets/dashboard_product_list.dart';
+import 'package:my_meal/utils/helpers/my_meal_app_bar.dart';
+import 'package:my_meal/utils/helpers/page_screen_builder.dart';
+import 'package:my_meal/utils/resources/color_palette.dart';
+import 'package:my_meal/utils/resources/dimnesions.dart';
+import 'package:my_meal/utils/resources/images.dart';
+import 'package:my_meal/utils/theme/bloc/theme_bloc.dart';
 
 class DashboardScreen extends StatelessWidget {
   const DashboardScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final isSmallScreen = MediaQuery.of(context).size.width < 600;
-
-    final _controller = SidebarXController(selectedIndex: 0, extended: true);
-    final _key = GlobalKey<ScaffoldState>();
-    return Scaffold(
-      key: _key,
-      appBar: isSmallScreen
-          ? AppBar(
-              backgroundColor: canvasColor,
-              title: Text('MyMeal'),
-              leading: IconButton(
-                onPressed: () {
-                  // if (!Platform.isAndroid && !Platform.isIOS) {
-                  //   _controller.setExtended(true);
-                  // }
-                  _key.currentState?.openDrawer();
-                },
-                icon: const Icon(Icons.menu),
-              ),
-            )
-          : null,
-      drawer: ExampleSidebarX(controller: _controller),
-      body: Row(
+    return const PageScreenBuilder(
+      child: Column(
         children: [
-          if (!isSmallScreen) ExampleSidebarX(controller: _controller),
-          Expanded(
-            child: Center(
-              child: Column(
-                children: [
-                  Gap(20),
-                ],
-              ),
-            ),
+          DashboardBanner(
+            isProductPage: false,
+            bannerImage: Images.dashboardBanner,
+            bannerText: 'Get inspired, cook with passion and enjoy unforgettable moments at the table.',
           ),
+          Gap(Dimnesions.defaultHorizontalPadding),
+          DashboardProductList()
         ],
       ),
     );

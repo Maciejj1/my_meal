@@ -9,8 +9,8 @@ class RecipeResponse with _$RecipeResponse {
   const factory RecipeResponse({
     int? id,
     String? name,
-    String? ingredients,
-    String? instructions,
+    List<String>? ingredients,
+    List<String>? instructions,
     int? prepTimeMinutes,
     int? cookTimeMinutes,
     int? servings,

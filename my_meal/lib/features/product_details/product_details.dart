@@ -1,1 +1,1 @@
-export 'presentation/product_details_screen.dart';
+export 'presentation/product_details_screen_content.dart';
