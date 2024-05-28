@@ -17,7 +17,7 @@ class DashboardProductCardImage extends StatelessWidget {
       top: Dimnesions.default0,
       left: Dimnesions.default0,
       right: Dimnesions.default0,
-      height: Dimnesions.default150, // Half of the container height
+      height: Dimnesions.default150,
       child: Container(
         decoration: BoxDecoration(
           borderRadius: const BorderRadius.only(
@@ -26,7 +26,7 @@ class DashboardProductCardImage extends StatelessWidget {
           image: product.image == null
               ? const DecorationImage(image: AssetImage(Images.imageNotFound))
               : DecorationImage(
-                  image: NetworkImage(product.image!), // Replace with URL to your image
+                  image: NetworkImage(product.image!),
                   fit: BoxFit.cover,
                 ),
         ),

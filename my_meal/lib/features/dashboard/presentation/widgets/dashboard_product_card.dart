@@ -1,16 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gap/gap.dart';
-import 'package:go_router/go_router.dart';
 import 'package:my_meal/features/dashboard/data/models/recipe_response.dart';
 import 'package:my_meal/features/dashboard/presentation/widgets/helpers/dashboard_product_card_button.dart';
 import 'package:my_meal/features/dashboard/presentation/widgets/helpers/dashboard_product_card_difficulty.dart';
 import 'package:my_meal/features/dashboard/presentation/widgets/helpers/dashboard_product_card_image.dart';
 import 'package:my_meal/features/dashboard/presentation/widgets/helpers/dashboard_product_card_title.dart';
-import 'package:my_meal/my_meal.dart';
-import 'package:my_meal/utils/resources/color_palette.dart';
 import 'package:my_meal/utils/resources/dimnesions.dart';
-import 'package:my_meal/utils/resources/images.dart';
 import 'package:my_meal/utils/resources/styles.dart';
 import 'package:my_meal/utils/theme/bloc/theme_bloc.dart';
 
@@ -38,7 +34,7 @@ class DashboardProductCard extends StatelessWidget {
                   children: [
                     DashboardProductCardImage(product: product),
                     Positioned(
-                      top: Dimnesions.default150, // Start of the white part
+                      top: Dimnesions.default150,
                       left: Dimnesions.default0,
                       right: Dimnesions.default0,
                       height: Dimnesions.default150,

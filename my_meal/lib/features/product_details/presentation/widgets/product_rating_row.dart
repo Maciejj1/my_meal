@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:my_meal/features/dashboard/data/models/recipe_response.dart';
-import 'package:my_meal/features/product_details/presentation/widgets/product_star_rating.dart';
+import 'package:my_meal/features/product_details/presentation/widgets/helpers/product_star_rating.dart';
 import 'package:my_meal/utils/resources/dimnesions.dart';
 import 'package:my_meal/utils/resources/styles.dart';
 

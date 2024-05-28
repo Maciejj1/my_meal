@@ -2,11 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:my_meal/core/routes/app_routes.dart';
-import 'package:my_meal/features/dashboard/data/datasources/dashboard_remote_datasource.dart';
-import 'package:my_meal/features/dashboard/data/repositories/dashboard_repository.dart';
+import 'package:my_meal/di.dart';
 import 'package:my_meal/features/dashboard/presentation/cubit/recipe_cubit.dart';
 import 'package:my_meal/features/dashboard/presentation/cubit/recipes_cubit.dart';
-import 'package:my_meal/features/dashboard/presentation/cubit/tags_cubit.dart';
 import 'package:my_meal/utils/helpers/constant.dart';
 import 'package:my_meal/utils/theme/bloc/theme_bloc.dart';
 
@@ -19,13 +17,10 @@ class MyMeal extends StatelessWidget {
       providers: [
         BlocProvider(create: (_) => DarkModeBloc()),
         BlocProvider<RecipeCubit>(
-          create: (context) => RecipeCubit(DashboardRepository(DashboardRemoteDatasource())),
+          create: (context) => getIt<RecipeCubit>(),
         ),
         BlocProvider<RecipesCubit>(
-          create: (context) => RecipesCubit(DashboardRepository(DashboardRemoteDatasource())),
-        ),
-        BlocProvider<TagsCubit>(
-          create: (context) => TagsCubit(DashboardRepository(DashboardRemoteDatasource())),
+          create: (context) => getIt<RecipesCubit>(),
         ),
       ],
       child: ScreenUtilInit(

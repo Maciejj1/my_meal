@@ -31,7 +31,7 @@ class DashboardProductList extends StatelessWidget {
           },
           success: (recipes) {
             final screenWidth = MediaQuery.of(context).size.width;
-            final crossAxisCount = screenWidth ~/ Dimnesions.default300; // Adjust the c
+            final crossAxisCount = screenWidth ~/ Dimnesions.default300;
             return SizedBox(
               width: MediaQuery.of(context).size.width,
               height: MediaQuery.of(context).size.height,

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
 import 'package:my_meal/features/splash_screen/widgets/splash_screen_button.dart';
 import 'package:my_meal/features/splash_screen/widgets/splash_screen_image.dart';

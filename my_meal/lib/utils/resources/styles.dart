@@ -34,7 +34,7 @@ class MyMealStyles {
       fontWeight: FontWeight.bold,
       fontFamily: 'Inter');
   TextStyle get defaultBannerTextStyle =>
-      TextStyle(color: Colors.white, fontSize: Dimnesions.defaultTitleFontSize, fontFamily: 'Inter');
+      const TextStyle(color: Colors.white, fontSize: Dimnesions.defaultTitleFontSize, fontFamily: 'Inter');
   TextStyle get splashScreenTitle => const TextStyle(
       color: Colors.white,
       fontSize: Dimnesions.splashScreenTitleSize,

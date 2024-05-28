@@ -3,16 +3,13 @@ import 'package:flutter/widgets.dart';
 import 'package:go_router/go_router.dart';
 import 'package:my_meal/features/dashboard/presentation/dashboard_screen.dart';
 import 'package:my_meal/features/product_details/presentation/product_details_screen.dart';
-import 'package:my_meal/features/product_details/presentation/product_details_screen_content.dart';
 import 'package:my_meal/features/splash_screen/splash_screen.dart';
-// Enumeracja definiująca różne ścieżki aplikacji.
 
 enum Routes {
   root("/"),
   splashScreen("/splashscreen"),
   dashboard("/dashboard"),
-  productDetails("dashboard/:id"),
-  ;
+  productDetails("dashboard/:id");
 
   const Routes(this.path);
   final String path;

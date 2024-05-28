@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:my_meal/my_meal.dart';
 import 'package:my_meal/utils/resources/dimnesions.dart';
 import 'package:my_meal/utils/resources/styles.dart';
 

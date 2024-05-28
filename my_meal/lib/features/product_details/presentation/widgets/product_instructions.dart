@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:my_meal/features/dashboard/data/models/recipe_response.dart';
-import 'package:my_meal/utils/resources/color_palette.dart';
 import 'package:my_meal/utils/resources/dimnesions.dart';
 import 'package:my_meal/utils/resources/styles.dart';
 

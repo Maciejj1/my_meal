@@ -1,7 +1,9 @@
+import 'package:injectable/injectable.dart';
 import 'package:my_meal/features/dashboard/data/datasources/dashboard_remote_datasource.dart';
 import 'package:my_meal/features/dashboard/data/models/recipe_response.dart';
 import 'package:my_meal/features/dashboard/data/models/recipes_response.dart';
 
+@lazySingleton
 class DashboardRepository {
   final DashboardRemoteDatasource dashboardRemoteDatasource;
   DashboardRepository(this.dashboardRemoteDatasource);
